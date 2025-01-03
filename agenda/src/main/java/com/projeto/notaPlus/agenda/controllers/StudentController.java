@@ -1,6 +1,7 @@
 package com.projeto.notaPlus.agenda.controllers;
 
 import com.projeto.notaPlus.agenda.domain.Student;
+import com.projeto.notaPlus.agenda.dtos.CreateStudent;
 import com.projeto.notaPlus.agenda.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping
-    public ResponseEntity<Student> addStudent(@RequestBody Student student) {
+    public ResponseEntity<Student> addStudent(@RequestBody CreateStudent student) {
         Student newStudent = studentService.addStudent(student);
         return ResponseEntity.ok().body(newStudent);
     }
